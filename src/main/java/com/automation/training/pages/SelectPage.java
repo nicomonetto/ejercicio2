@@ -38,19 +38,41 @@ public class SelectPage extends BasePage {
 	
 	public void ordenarPorDuration() {
 		Select selectItem = new Select(driver.findElement(By.id("sortDropdown")));
-		selectItem.getOptions().get(2).click();		
+		selectItem.getOptions().get(2).click();	
+		System.out.println("Ordenamiento por Duracion OK");
 	}
 	
-	public void SeleccionarVuelo() {
+	public void SeleccionarVueloIda() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-module-2019-06-10t06:15:00-07:00-coach-las-lax-dl-2920_2019-06-17t20:25:00-07:00-coach-lax-las-as-560_\"]/div[1]/div[1]/div[2]/div/div[2]/button")));	
+		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t19:47:00-07:00-coach-lax-las-ua-2048_\"]/div[1]/div[1]/div[2]/div/div[2]/button")));	
 		boton.click();
+		System.out.println("Vuelo ida seleccionado OK");
+	}
+	
+	public void SeleccionarVueloVuelta() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);	
+		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t21:00:00-07:00-coach-lax-las-ua-325_\"]/div[1]/div[1]/div[2]/div/div[2]/button")));	
+		boton.click();
+		System.out.println("Vuelo vuelta seleccionado OK");
 	}
 	
 	public void confirmarVuelo() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-1\"]/div/div/div[1]/button")));	
+		WebElement seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-3\"]/div/article/div[1]/button")));	
 		seleccionar.click();
-	}
-	
+		System.out.println("Vuelo vuelta confirmado OK");
+	}	
+
+	public void Modal() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);	
+		WebElement modal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"xSellHotelForcedChoice\"]/div")));	
+		
+		if (modal.isDisplayed()) {
+			System.out.println("Modal visto");
+			WebElement nothanks = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("forcedChoiceNoThanks")));
+			nothanks.click();
+		}else {
+			System.out.println("Modal no visto");
+		}		
+	}	
 }

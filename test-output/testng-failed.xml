@@ -5,8 +5,9 @@
     <classes>
       <class name="com.automation.training.tests.BaseTest">
         <methods>
-          <include name="ExerciseTwoA"/>
+          <include name="ExerciseSixSeven"/>
           <include name="beforeTest"/>
+          <include name="ExerciseTwoThreeFourFive"/>
         </methods>
       </class> <!-- com.automation.training.tests.BaseTest -->
     </classes>

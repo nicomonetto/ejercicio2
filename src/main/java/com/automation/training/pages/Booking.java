@@ -50,51 +50,64 @@ public class Booking extends BasePage {
 		txtInbound.sendKeys(destino);
 	}	
 	
-	public void seleccionarDeparture() {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		today = getCurrentDay();
-		
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-departing-hp-flight")));
-		departing.click();
-		
-		WebElement tablefrom = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-departing-wrapper-hp-flight\"]/div/div/div[3]")));
-		
-		List<WebElement> columns = tablefrom.findElements(By.tagName("td"));
-		
-		for(WebElement cell: columns) {
-			if(cell.getText().equals(today+60)) {
-				cell.click();
-				break;
-			}
-		}
-	}
-	
-	
 	//Get The Current Day
-    private String getCurrentDay (){
+    public String getCurrentDay (){
         //Create a Calendar Object
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
- 
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault()); 
         //Get Current Day as a number
-        int todayInt = calendar.get(Calendar.DAY_OF_MONTH);
-        System.out.println("Today Int: " + todayInt +"\n");
- 
+        int todayDay = calendar.get(Calendar.DAY_OF_MONTH);
+        System.out.println("Today Day: " + todayDay +"\n");
+        //Get Current Month as a number
+        int todayMonth = calendar.get(Calendar.MONTH)+3;
+        System.out.println("Today Month: " + todayMonth +"\n");
+        //Get Current Year as a number
+        int todayYear = calendar.get(Calendar.YEAR);
+        System.out.println("Today Year: " + todayYear +"\n");
+        
         //Integer to String Conversion
-        String todayStr = Integer.toString(todayInt);
-        System.out.println("Today Str: " + todayStr + "\n");
- 
-        return todayStr;
-    }
+        String todayStrDay = Integer.toString(todayDay);
+        String todayStrMonth = Integer.toString(todayMonth);
+        String todayStrYear = Integer.toString(todayYear);
+        System.out.println("Today Str: " + todayStrMonth + "/" + todayStrDay + "/" + todayStrYear + "\n");
+        String fecha = todayStrMonth + "/" + todayStrDay + "/" + todayStrYear;
+        
+        return fecha;
+    }  
 	
-	public void seleccionarFechaDeparture(String fechaPartida) {
+//	public void seleccionarDeparture() {
+//		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//		today = getCurrentDay();
+//		
+//		WebDriverWait wait = new WebDriverWait(driver, 10);	
+//		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-departing-hp-flight")));
+//		departing.click();
+//				
+//		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-departing-wrapper-hp-flight\"]/div/div/button[2]")));
+//		boton.click();		
+//		
+//		WebElement tablefrom = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-departing-wrapper-hp-flight\"]/div/div/div[3]/table/tbody")));
+//		
+//		//*[@id="flight-departing-wrapper-hp-flight"]/div/div/div[3]/table/tbody/tr[5]/td[3]/button
+//		//*[@id="flight-departing-wrapper-hp-flight"]/div/div/div[3]/table/tbody/tr[5]/td[2]/button
+//		
+//		List<WebElement> rows = tablefrom.findElements(By.tagName("tr"));
+//		
+//		for(WebElement cell: rows) {
+//			if(cell.getText().equals(today)) {
+//				cell.click();
+//				break;
+//			}
+//		}
+//	}	
+	
+	public void seleccionarFechaDeparture(String departuredate) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
 		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-departing-hp-flight")));
 		departing.clear();
-		departing.sendKeys(fechaPartida);
+		departing.sendKeys(departuredate);
 	}
 		
-	public void seleccionarFechaArrival(String fechaArribo) {
+	public void seleccionarFechaArrival(String arrivaldate) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
 		WebElement arrival = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-returning-hp-flight")));
 		arrival.click();
@@ -104,7 +117,7 @@ public class Booking extends BasePage {
 			arrival.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		arrival.sendKeys(fechaArribo);
+		arrival.sendKeys(arrivaldate);
 	}	
 	
 	public void presionarSearchButton() {
