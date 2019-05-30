@@ -49,7 +49,7 @@ public class SelectPage extends BasePage {
 	
 	public void confirmarVuelo() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-1\"]/div/article/div[1]/button")));	
+		WebElement seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-1\"]/div/div/div[1]/button")));	
 		seleccionar.click();
 	}
 	

@@ -2,11 +2,7 @@ package com.automation.training.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.automation.training.pages.Booking;
@@ -17,10 +13,13 @@ public class BaseTest {
 	WebDriver myDriver;
 	
 	private Booking homepage;	
-		
+	
+	String os = System.getProperty("os.name").toLowerCase();
+	
 	@BeforeTest
-	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\nicolas.monetto\\nicoself\\Drivers\\chromedriver.exe");
+	public void beforeTest() { 
+		
+		System.setProperty("webdriver.chrome.driver", "/Users/nicomonetto/Documents/GitHub/ejercicio2/Drivers/chromedriver");
 		myDriver = new ChromeDriver();		
 		myDriver.manage().window().maximize();
 		myDriver.get("https://www.travelocity.com/");
@@ -35,7 +34,7 @@ public class BaseTest {
 		Booking home = new Booking(myDriver);
 		home.PresionarFlightButton();	
 		home.PresionarRoundTrip();
-		home.IngresarOrigen("LLAS");
+		home.IngresarOrigen("LAS");
 		home.ingresarDestino("LLAX");
 		home.seleccionarFechaDeparture("06/10/2019");
 		home.seleccionarFechaArrival("06/17/2019");
