@@ -65,14 +65,9 @@ public class SelectPage extends BasePage {
 
 	public void Modal() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement modal = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"xSellHotelForcedChoice\"]/div")));	
-		
-		if (modal.isDisplayed()) {
-			System.out.println("Modal visto");
-			WebElement nothanks = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("forcedChoiceNoThanks")));
-			nothanks.click();
-		}else {
-			System.out.println("Modal no visto");
+		WebElement nothanks = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("forcedChoiceNoThanks")));
+		nothanks.click();
+		System.out.println("No Thanks apretado");
 		}		
 	}	
-}
+

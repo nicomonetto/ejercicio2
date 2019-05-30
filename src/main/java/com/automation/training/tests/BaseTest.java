@@ -21,7 +21,7 @@ public class BaseTest {
 	@BeforeTest
 	public void beforeTest() { 
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\nicolas.monetto\\nicoself\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/Users/nicomonetto/Documents/GitHub/ejercicio2/Drivers/chromedriver");
 		myDriver = new ChromeDriver();		
 		myDriver.manage().window().maximize();
 		myDriver.get("https://www.travelocity.com/");
@@ -36,8 +36,8 @@ public class BaseTest {
 		Booking home = new Booking(myDriver);
 		home.PresionarFlightButton();	
 		home.PresionarRoundTrip();
-		home.IngresarOrigen("LLAS");
-		home.ingresarDestino("LLAX");
+		home.IngresarOrigen("Las Vegas, NV (LAS-McCarran Intl.)");
+		home.ingresarDestino("Los Angeles, CA (LAX-Los Angeles Intl.)");
 		home.seleccionarFechaDeparture("07/20/2019");
 		home.seleccionarFechaArrival("07/25/2019");
 		home.presionarSearchButton();
