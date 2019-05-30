@@ -2,45 +2,45 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33206" started-at="2019-05-30T00:10:22Z" finished-at="2019-05-30T00:10:55Z">
+  <suite name="Default suite" duration-ms="71637" started-at="2019-05-30T01:45:03Z" finished-at="2019-05-30T01:46:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33206" started-at="2019-05-30T00:10:22Z" finished-at="2019-05-30T00:10:55Z">
+    <test name="Default test" duration-ms="71637" started-at="2019-05-30T01:45:03Z" finished-at="2019-05-30T01:46:14Z">
       <class name="com.automation.training.tests.BaseTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.automation.training.tests.BaseTest@d8355a8]" name="beforeTest" is-config="true" duration-ms="26140" started-at="2019-05-29T21:10:22Z" finished-at="2019-05-29T21:10:48Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.automation.training.tests.BaseTest@d8355a8]" name="beforeTest" is-config="true" duration-ms="45856" started-at="2019-05-29T22:45:03Z" finished-at="2019-05-29T22:45:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="ExerciseOne()[pri:0, instance:com.automation.training.tests.BaseTest@d8355a8]" name="ExerciseOne" duration-ms="6295" started-at="2019-05-29T21:10:48Z" finished-at="2019-05-29T21:10:55Z">
+        <test-method status="PASS" signature="ExerciseOne()[pri:0, instance:com.automation.training.tests.BaseTest@d8355a8]" name="ExerciseOne" duration-ms="4787" started-at="2019-05-29T22:45:48Z" finished-at="2019-05-29T22:45:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExerciseOne -->
-        <test-method status="FAIL" signature="ExerciseTwoA()[pri:0, instance:com.automation.training.tests.BaseTest@d8355a8]" name="ExerciseTwoA" duration-ms="96" started-at="2019-05-29T21:10:55Z" finished-at="2019-05-29T21:10:55Z">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+        <test-method status="FAIL" signature="ExerciseTwoA()[pri:0, instance:com.automation.training.tests.BaseTest@d8355a8]" name="ExerciseTwoA" duration-ms="20268" started-at="2019-05-29T22:45:53Z" finished-at="2019-05-29T22:46:13Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
+              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"sortDropdown"}
   (Session info: chrome=74.0.3729.169)
   (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Mac OS X 10.10.2 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 56 milliseconds
+Command duration or timeout: 20.19 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
 System info: host: 'MacBook-Pro-de-Nico.local', ip: '192.168.0.86', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=MAC, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:50615}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=/var/folders/bw/nvy774ts7w107y9w73krj6cw0000gn/T/.com.google.Chrome.1Lkrcq}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 4467b081dde4d38b62377d6be5608be7
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=MAC, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53222}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=/var/folders/bw/nvy774ts7w107y9w73krj6cw0000gn/T/.com.google.Chrome.D4ykV4}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 18ec7db1bc72993e5d692385fa6d796a
 *** Element info: {Using=id, value=sortDropdown}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"sortDropdown"}
   (Session info: chrome=74.0.3729.169)
   (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Mac OS X 10.10.2 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 56 milliseconds
+Command duration or timeout: 20.19 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
 System info: host: 'MacBook-Pro-de-Nico.local', ip: '192.168.0.86', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=MAC, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:50615}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=/var/folders/bw/nvy774ts7w107y9w73krj6cw0000gn/T/.com.google.Chrome.1Lkrcq}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 4467b081dde4d38b62377d6be5608be7
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=MAC, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53222}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=/var/folders/bw/nvy774ts7w107y9w73krj6cw0000gn/T/.com.google.Chrome.D4ykV4}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 18ec7db1bc72993e5d692385fa6d796a
 *** Element info: {Using=id, value=sortDropdown}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -54,7 +54,7 @@ Session ID: 4467b081dde4d38b62377d6be5608be7
 	at org.openqa.selenium.By$ById.findElement(By.java:218)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
 	at com.automation.training.pages.SelectPage.buscarDropDown(SelectPage.java:18)
-	at com.automation.training.tests.BaseTest.ExerciseTwoA(BaseTest.java:47)
+	at com.automation.training.tests.BaseTest.ExerciseTwoA(BaseTest.java:48)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -81,7 +81,7 @@ Session ID: 4467b081dde4d38b62377d6be5608be7
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExerciseTwoA -->

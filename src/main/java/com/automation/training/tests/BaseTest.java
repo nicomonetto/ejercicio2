@@ -36,7 +36,8 @@ public class BaseTest {
 		home.PresionarRoundTrip();
 		home.IngresarOrigen("LAS");
 		home.ingresarDestino("LLAX");
-		home.seleccionarFechaDeparture("06/10/2019");
+		home.seleccionarDeparture();
+//		home.seleccionarFechaDeparture("06/10/2019");
 		home.seleccionarFechaArrival("06/17/2019");
 		home.presionarSearchButton();
 	}
