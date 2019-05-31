@@ -101,9 +101,8 @@ public class SelectPage extends BasePage {
 			Thread.sleep(10000);		    
 
 		    for(String winHandle : driver.getWindowHandles()){
-		        driver.switchTo().window(winHandle);
-		        String act = driver.getCurrentUrl();
-		        System.out.print(act.toString());
+		        driver.switchTo().window(winHandle);		        
+		        System.out.print(driver.getCurrentUrl().toString());
 		    }
 		    }catch(Exception e){
 		   System.out.println("fail");
