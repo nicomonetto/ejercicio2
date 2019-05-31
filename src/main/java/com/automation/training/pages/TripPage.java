@@ -17,19 +17,19 @@ public class TripPage extends BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
 		WebElement total = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/main/section[2]/div/div[2]/div/div[1]/span[2]")));	
 		Assert.assertEquals(total, true);
-		System.out.println(total.getText());
+		System.out.println(total.getText().toString());
 	}
 	
 	public void VerificarSalida() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement salida = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/main/section[1]/div[2]/div[1]/div/div/div[1]/div[1]")));	
+		WebElement salida = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/main/section[1]/div/div[1]/div/div/div[1]/div[1]")));	
 		Assert.assertEquals(salida, true);
 		System.out.println("Datos de salida OK");
 	}
 	
 	public void VerificarVuelta() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement vuelta = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/main/section[1]/div[2]/div[2]/div/div/div[1]")));	
+		WebElement vuelta = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/main/section[1]/div/div[2]/div/div/div[1]/div[1]")));	
 		Assert.assertEquals(vuelta, true);
 		System.out.println("Datos de retorno OK");
 	}

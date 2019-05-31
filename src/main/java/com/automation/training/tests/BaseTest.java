@@ -12,16 +12,14 @@ import com.automation.training.pages.WhoIsTravelingPage;
 
 public class BaseTest {
 	
-	WebDriver myDriver;
+	WebDriver myDriver;	
 	
-	private Booking homepage;	
-	
-	String os = System.getProperty("os.name").toLowerCase();
-	
+	private Booking homepage;
+
 	@BeforeTest
 	public void beforeTest() { 
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/nicomonetto/Documents/GitHub/ejercicio2/Drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\nicolas.monetto\\nicoself\\Drivers\\chromedriver.exe");
 		myDriver = new ChromeDriver();		
 		myDriver.manage().window().maximize();
 		myDriver.get("https://www.travelocity.com/");
@@ -53,24 +51,25 @@ public class BaseTest {
 		select.SeleccionarVueloVuelta();
 		select.confirmarVuelo();
 		select.Modal();
+		select.GetURL();
 	}
 	
 	@Test
-	public void ExerciseSixSeven() {
+	public void ExerciseSixSeven() {	
 		TripPage trip = new TripPage(myDriver);
 		trip.VerificarTotal();
-		trip.VerificarSalida();
-		trip.VerificarVuelta();
-		trip.VerificarPriceGuarantee();
+//		trip.VerificarSalida();
+//		trip.VerificarVuelta();
+//		trip.VerificarPriceGuarantee();
 	}
 	
-	@Test
-	public void ExerciseEight() {
-		WhoIsTravelingPage traveling = new WhoIsTravelingPage(myDriver);
-		traveling.VerificarTitulo();
-		traveling.VerificarPriceGuarantee();
-		traveling.VerificarProtectYourFlight();
-		traveling.VerificarTotal();
-	}
+//	@Test
+//	public void ExerciseEight() {
+//		WhoIsTravelingPage traveling = new WhoIsTravelingPage(myDriver);
+//		traveling.VerificarTitulo();
+//		traveling.VerificarPriceGuarantee();
+//		traveling.VerificarProtectYourFlight();
+//		traveling.VerificarTotal();
+//	}
 	
 }

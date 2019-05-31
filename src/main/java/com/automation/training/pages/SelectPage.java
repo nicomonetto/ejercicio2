@@ -1,15 +1,18 @@
 package com.automation.training.pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.*;
 
 public class SelectPage extends BasePage {
-
+	
 	public SelectPage(WebDriver driver) {
 		super(driver);
 	}
@@ -51,16 +54,38 @@ public class SelectPage extends BasePage {
 	
 	public void SeleccionarVueloVuelta() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t21:00:00-07:00-coach-lax-las-ua-325_\"]/div[1]/div[1]/div[2]/div/div[2]/button")));	
+		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t21:00:00-07:00-coach-lax-las-ua-325_\"]/div[1]/div[1]/div[2]/div/div[2]/button")));		
 		boton.click();
-		System.out.println("Vuelo vuelta seleccionado OK");
+		System.out.println("Vuelo vuelta seleccionado OK");		
 	}
 	
 	public void confirmarVuelo() {
+		
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-3\"]/div/article/div[1]/button")));	
-		seleccionar.click();
-		System.out.println("Vuelo vuelta confirmado OK");
+		WebElement seleccionar;
+		WebElement modal;
+		Actions action = new Actions(driver);
+					
+		if(driver.findElements(By.xpath("//*[@id=\"xSellHotelForcedChoice\"]/div")).size() !=0) {
+			modal = driver.findElement(By.id("forcedChoiceNoThanks"));
+			action.moveToElement(modal).click().build().perform();
+//			modal.click();
+			System.out.println("Vuelo vuelta confirmado OK");			
+		}else {
+		
+		if(driver.findElements(By.xpath("//*[@id=\\\"basic-economy-tray-content-3\\\"]/div/div/div[1]/button")).size() !=0){
+			 seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-3\"]/div/div/div[1]/button")));	
+			 seleccionar.click();
+			 System.out.println("Vuelo vuelta confirmado OK");	
+		}else 
+			{
+				if(driver.findElements(By.xpath("//*[@id=\\\"basic-economy-tray-content-3\\\"]/div/article/div[1]/button")).size() !=0){ 		
+				seleccionar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"basic-economy-tray-content-3\"]/div/article/div[1]/button")));
+				seleccionar.click();
+				System.out.println("Vuelo vuelta confirmado OK");
+			}	
+			}
+		}
 	}	
 
 	public void Modal() {
@@ -69,5 +94,21 @@ public class SelectPage extends BasePage {
 		nothanks.click();
 		System.out.println("No Thanks apretado");
 		}		
-	}	
+
+	public void GetURL() {
+		try {
+			
+			Thread.sleep(10000);		    
+
+		    for(String winHandle : driver.getWindowHandles()){
+		        driver.switchTo().window(winHandle);
+		        String act = driver.getCurrentUrl();
+		        System.out.print(act.toString());
+		    }
+		    }catch(Exception e){
+		   System.out.println("fail");
+		    }
+	}
+	
+}	
 
