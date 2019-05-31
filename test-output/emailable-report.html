@@ -31,40 +31,29 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">43.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">63.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">Default test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="2">com.automation.training.tests.BaseTest</td><td><a href="#m1"><b>ExerciseSixSeven</b>  </a></td><td class="numi">1</td><td>1559246322169</td><td class="numi">10299</td></tr><tr class="failedodd"><td><a href="#m2"><b>ExerciseTwoThreeFourFive</b>  </a></td><td class="numi">1</td><td>1559246332485</td><td class="numi">14302</td></tr>
+<tr class="failedodd"><td rowspan="3">com.automation.training.tests.BaseTest</td><td><a href="#m1"><b>ExerciseEight</b>  </a></td><td class="numi">1</td><td>1559305947663</td><td class="numi">10238</td></tr><tr class="failedodd"><td><a href="#m2"><b>ExerciseSixSeven</b>  </a></td><td class="numi">1</td><td>1559305964429</td><td class="numi">18626</td></tr><tr class="failedodd"><td><a href="#m3"><b>ExerciseTwoThreeFourFive</b>  </a></td><td class="numi">1</td><td>1559305983059</td><td class="numi">22</td></tr>
 <tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">com.automation.training.tests.BaseTest</td><td><a href="#m3"><b>ExerciseOne</b>  </a></td><td class="numi">1</td><td>1559246317896</td><td class="numi">4272</td></tr>
+<tr class="passedodd"><td rowspan="1">com.automation.training.tests.BaseTest</td><td><a href="#m4"><b>ExerciseOne</b>  </a></td><td class="numi">1</td><td>1559305957914</td><td class="numi">6514</td></tr>
 </table>
 <h1>Default test</h1>
 <h2 id="m1">com.automation.training.tests.BaseTest:ExerciseTwoThreeFourFive</h2>
 <div style="padding-left:3em">
-<p>Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&quot;flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t19:47:00-07:00-coach-lax-las-ua-2048_&quot;]/div[1]/div[1]/div[2]/div/div[2]/button (tried for 10 second(s) with 500 MILLISECONDS interval)
-Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
-System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51386}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir16612_12965}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 688febfbe39da9e71a2f118352761212</p>
-org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:265)
-<br/>at com.automation.training.pages.SelectPage.SeleccionarVueloIda(SelectPage.java:47)
-<br/>at com.automation.training.tests.BaseTest.ExerciseTwoThreeFourFive(BaseTest.java:52)
-<br/>25 lines not shown
-<p>Caused by no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t19:47:00-07:00-coach-lax-las-ua-2048_&quot;]/div[1]/div[1]/div[2]/div/div[2]/button&quot;}
+<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;sortDropdown&quot;}
   (Session info: chrome=74.0.3729.169)
   (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 30 milliseconds
+Command duration or timeout: 17 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
 System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51386}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir16612_12965}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 688febfbe39da9e71a2f118352761212
-*** Element info: {Using=xpath, value=//*[@id=&quot;flight-module-2019-07-20t06:15:00-07:00-coach-las-lax-dl-2920_2019-07-25t19:47:00-07:00-coach-lax-las-ua-2048_&quot;]/div[1]/div[1]/div[2]/div/div[2]/button}</p>
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62703}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir15208_29304}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0938628913971de53e59d0ddde289411
+*** Element info: {Using=id, value=sortDropdown}</p>
 sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 <br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 <br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
@@ -72,16 +61,11 @@ sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 <br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
-<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
+<br/>at org.openqa.selenium.By$ById.findElement(By.java:218)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
-<br/>at com.automation.training.pages.SelectPage.SeleccionarVueloIda(SelectPage.java:47)
-<br/>at com.automation.training.tests.BaseTest.ExerciseTwoThreeFourFive(BaseTest.java:52)
+<br/>at com.automation.training.pages.SelectPage.buscarDropDown(SelectPage.java:18)
+<br/>at com.automation.training.tests.BaseTest.ExerciseTwoThreeFourFive(BaseTest.java:49)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
@@ -91,8 +75,8 @@ sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
 System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51386}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir16612_12965}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 688febfbe39da9e71a2f118352761212</p>
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62703}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir15208_29304}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0938628913971de53e59d0ddde289411</p>
 org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 <br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:265)
 <br/>at com.automation.training.pages.TripPage.VerificarTotal(TripPage.java:18)
@@ -101,13 +85,13 @@ org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java
 <p>Caused by no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/main/section[2]/div/div[2]/div/div[1]/span[2]&quot;}
   (Session info: chrome=74.0.3729.169)
   (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 24 milliseconds
+Command duration or timeout: 14.04 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
 System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:51386}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir16612_12965}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 688febfbe39da9e71a2f118352761212
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62703}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir15208_29304}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0938628913971de53e59d0ddde289411
 *** Element info: {Using=xpath, value=/html/body/main/section[2]/div/div[2]/div/div[1]/span[2]}</p>
 sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 <br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -129,6 +113,50 @@ sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">com.automation.training.tests.BaseTest:ExerciseOne</h2>
+<h2 id="m3">com.automation.training.tests.BaseTest:ExerciseEight</h2>
+<div style="padding-left:3em">
+<p>Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&quot;preferences&quot;]/form/fieldset/h2 (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62703}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir15208_29304}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0938628913971de53e59d0ddde289411</p>
+org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:265)
+<br/>at com.automation.training.pages.WhoIsTravelingPage.VerificarTitulo(WhoIsTravelingPage.java:18)
+<br/>at com.automation.training.tests.BaseTest.ExerciseEight(BaseTest.java:70)
+<br/>25 lines not shown
+<p>Caused by no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;preferences&quot;]/form/fieldset/h2&quot;}
+  (Session info: chrome=74.0.3729.169)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 23 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62703}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir15208_29304}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0938628913971de53e59d0ddde289411
+*** Element info: {Using=xpath, value=//*[@id=&quot;preferences&quot;]/form/fieldset/h2}</p>
+sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
+<br/>at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+<br/>at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+<br/>at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+<br/>at com.automation.training.pages.WhoIsTravelingPage.VerificarTitulo(WhoIsTravelingPage.java:18)
+<br/>at com.automation.training.tests.BaseTest.ExerciseEight(BaseTest.java:70)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">com.automation.training.tests.BaseTest:ExerciseOne</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
