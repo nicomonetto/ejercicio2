@@ -2,6 +2,7 @@ package com.automation.training.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -10,7 +11,7 @@ import com.automation.training.pages.SelectPage;
 import com.automation.training.pages.TripPage;
 import com.automation.training.pages.WhoIsTravelingPage;
 
-public class BaseTest {
+public class EjercicioUno {
 	
 	WebDriver myDriver;	
 	
@@ -30,7 +31,7 @@ public class BaseTest {
 	}
 	
 	@Test
-	public void ExerciseOne() {
+	public void EjercicioAcamicaUno() throws Exception {
 		Booking home = new Booking(myDriver);
 		home.PresionarFlightButton();	
 		home.PresionarRoundTrip();
@@ -39,10 +40,8 @@ public class BaseTest {
 		home.seleccionarFechaDeparture("07/20/2019");
 		home.seleccionarFechaArrival("07/25/2019");
 		home.presionarSearchButton();
-	}
-	
-	@Test
-	public void ExerciseTwoThreeFourFive() {
+		
+		//Ejercicio 2, 3, 4 y 5
 		SelectPage select = new SelectPage(myDriver);
 		select.buscarDropDown();
 		select.identificarSelectButton();
@@ -51,25 +50,29 @@ public class BaseTest {
 		select.SeleccionarVueloVuelta();
 		select.confirmarVuelo();
 		select.Modal();
-		select.GetURL();
-	}
-	
-	@Test
-	public void ExerciseSixSeven() {	
+				
+		//Ejercicio 6 y 7 
 		TripPage trip = new TripPage(myDriver);
+		Thread.sleep(15000);
 		trip.VerificarTotal();
-//		trip.VerificarSalida();
-//		trip.VerificarVuelta();
-//		trip.VerificarPriceGuarantee();
-	}
-	
-//	@Test
-//	public void ExerciseEight() {
-//		WhoIsTravelingPage traveling = new WhoIsTravelingPage(myDriver);
-//		traveling.VerificarTitulo();
-//		traveling.VerificarPriceGuarantee();
-//		traveling.VerificarProtectYourFlight();
-//		traveling.VerificarTotal();
-//	}
-	
+		trip.VerificarSalida();
+		trip.VerificarVuelta();
+		trip.VerificarPriceGuarantee();
+		trip.SeleccionarContinuar();
+				
+		//Ejercicio 8
+		WhoIsTravelingPage traveling = new WhoIsTravelingPage(myDriver);
+		traveling.VerificarTitulo();
+		traveling.VerificarPriceGuarantee();
+		traveling.VerificarProtectYourFlight();
+		traveling.VerificarTotal();
+		traveling.SeleccionarContinuar();
+	}	
+
+	@AfterTest
+	public void afterTest() { 
+			myDriver.close();
+		}		
 }
+
+
