@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.text.html.Option;
+
 public class Booking extends BasePage {
 
 	public Booking(WebDriver driver) {
@@ -219,8 +221,38 @@ public class Booking extends BasePage {
 	}	
 	
 	public void seleccionarGoingToDropdown() {
-		Select selectItem = new Select(driver.findElement(By.id("cruise-destination-hp-cruise")));
-		System.out.println(selectItem.getOptions().toString());		
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement selectCountry = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@class='cruise-destination gcw-storeable']")));		
+		
+//		Select selectElement = new Select(selectCountry);
+//		System.out.println(selectElement.getOptions().get(5).getText());
+						
+		selectCountry.sendKeys(Keys.RETURN);
+		selectCountry.sendKeys(Keys.DOWN);
+		selectCountry.sendKeys(Keys.DOWN);		
+		selectCountry.sendKeys(Keys.DOWN);
+		selectCountry.sendKeys(Keys.DOWN);
+		selectCountry.sendKeys(Keys.DOWN);
+		selectCountry.sendKeys(Keys.DOWN);
+		selectCountry.sendKeys(Keys.RETURN);
+				
+		System.out.println(selectCountry.getText());	
+		
+//		List<WebElement> options = selectElement.getOptions();
+//		for(int i=0; i<options.size(); i++) {
+//			WebElement option=options.get(i);
+//			String countryName = option.getText();
+//			boolean selectedValue = option.isSelected();
+//			System.out.println(countryName);
+//			System.out.println(selectedValue);
+//			if(option.getText() == "Europe")
+//			{option.click();}
+//		}
+		
+		//Select dropdown = new Select(driver.findElement(By.id("cruise-destination-hp-cruise")));
+		//dropdown.getOptions().get(5).click();
+		//System.out.println(dropdown.getOptions().get(5).getText());		
+		
 	}
 	
 	public void seleccionarFechaDepartsCruise(String checkindate) {
@@ -245,8 +277,8 @@ public class Booking extends BasePage {
 	
 	public void presionarSearchButtonCruise() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement checkbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-cruises-form-hp-cruise\"]/button")));
-		checkbox.click();	
+		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-cruises-form-hp-cruise\"]/button")));
+		boton.click();	
 	}
 	
 }

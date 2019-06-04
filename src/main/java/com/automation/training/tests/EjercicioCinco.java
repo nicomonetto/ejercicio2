@@ -2,6 +2,7 @@ package com.automation.training.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -27,11 +28,11 @@ WebDriver myDriver;
 	}
 	
 	@Test
-	public void EjercicioAcamicaCinco() {
+	public void EjercicioAcamicaCinco() throws Exception {
 		//Punto 1, 2, 3, 4 
 		Booking home = new Booking(myDriver);
 		home.PresionarCruiseTab();
-		home.seleccionarGoingToDropdown(); //Resta terminar
+		home.seleccionarGoingToDropdown();
 		home.seleccionarFechaDepartsCruise("07/20/2019");
 		home.seleccionarFechaDepartsLateCruise("07/25/2019");
 		home.presionarSearchButtonCruise();
@@ -39,5 +40,15 @@ WebDriver myDriver;
 		//Punto 5
 		CruiseSearchPage cruise = new CruiseSearchPage(myDriver);
 		cruise.SeleccionarCruiseLength();
+		Thread.sleep(5000);
+		cruise.OrdenarPorPrice();
+		Thread.sleep(10000);
+		cruise.ValidarDescuentos();
+		cruise.SeleccionarCrucero();
 	}
+	
+	@AfterTest
+	public void afterTest() { 
+			myDriver.close();
+		}
 }

@@ -1,9 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="My test suite" verbose="1">
-<test name="My first test"> 
+<suite name="My Acamica Suite" verbose="1">
+<test name="My Acamica Tests"> 
 <classes>
-<class name="com.automation.training.tests.BookingTest"></class>
+<class name="com.automation.training.tests.EjercicioUno"></class>
+<class name="com.automation.training.tests.EjercicioDos"></class>
+<class name="com.automation.training.tests.EjercicioTres"></class>
+<class name="com.automation.training.tests.EjercicioCuatro"></class>
+<class name="com.automation.training.tests.EjercicioCinco"></class>
 </classes>
 </test>
 </suite>
