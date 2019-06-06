@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.automation.training.tests.EjercicioCinco">
+      <class name="com.automation.training.tests.EjercicioAcamica">
         <methods>
-          <include name="EjercicioAcamicaCinco"/>
+          <include name="afterTest"/>
+          <include name="EjercicioAcamicaUno"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.automation.training.tests.EjercicioCinco -->
+      </class> <!-- com.automation.training.tests.EjercicioAcamica -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

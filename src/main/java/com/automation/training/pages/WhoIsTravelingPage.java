@@ -41,7 +41,7 @@ public class WhoIsTravelingPage extends BasePage {
 		System.out.println("Precio Garantizado OK");
 	}
 	
-	public void SeleccionarContinuar() {
+	public void VerificarBotonContinuar() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
 		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("complete-booking")));	
 		Assert.assertEquals(boton.isDisplayed(), true);

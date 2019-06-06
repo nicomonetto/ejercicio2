@@ -1,13 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="My Acamica Suite" verbose="1">
+<suite name="My Acamica Suite" verbose="1" thread-count="5" parallel="methods">
 <test name="My Acamica Tests"> 
 <classes>
-<class name="com.automation.training.tests.EjercicioUno"></class>
-<class name="com.automation.training.tests.EjercicioDos"></class>
-<class name="com.automation.training.tests.EjercicioTres"></class>
-<class name="com.automation.training.tests.EjercicioCuatro"></class>
-<class name="com.automation.training.tests.EjercicioCinco"></class>
+<class name="com.automation.training.tests.EjercicioAcamica"></class>
 </classes>
 </test>
 </suite>

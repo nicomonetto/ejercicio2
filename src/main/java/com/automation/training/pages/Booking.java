@@ -12,7 +12,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
@@ -20,16 +23,99 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.text.html.Option;
 
 public class Booking extends BasePage {
-
-	public Booking(WebDriver driver) {
-		super(driver);		
-	}
+	
+	private String today;
 	
 	@FindBy(id="tab-flight-tab-hp")
 	private WebElement flightbutton;
 	
 	@FindBy(id="tab-package-tab-hp")
 	private WebElement packagebutton;
+	
+	@FindBy(id="flight-type-roundtrip-label-hp-flight")
+	private WebElement roundtrip;
+	
+	@FindBy(id="fh-fh-hp-package")
+	private WebElement flighthotel;
+	
+	@FindBy(id="flight-departing-hp-flight")
+	private WebElement flightdeparturedate;
+	
+	@FindBy(id="flight-returning-hp-flight")
+	private WebElement flightarrivaldate;
+	
+	@FindBy(id="primary-header-hotel")
+	private WebElement headerhotel;
+	
+	@FindBy(id="tab-hotel-tab-hlp")
+	private WebElement hotelonlytab;
+	
+	@FindBy(id="hotel-destination-hlp")
+	private WebElement hoteldestination;
+	
+	@FindBy(id="package-origin-hp-package")
+	private WebElement packageorigin;
+	
+	@FindBy(id="package-destination-hp-package")
+	private WebElement packagedestino;
+	
+	@FindBy(id="package-departing-hp-package")
+	private WebElement packagedeparting;
+	
+	@FindBy(id="package-returning-hp-package")
+	private WebElement packagereturning;
+	
+	@FindBy(id="tab-cruise-tab-hp")
+	private WebElement cruisetab;
+	
+	@FindBy(id="hotel-checkin-hlp")
+	private WebElement hotelcheckin;
+	
+	@FindBy(id="hotel-checkout-hlp")
+	private WebElement hotelcheckout;
+	
+	@FindBy(id="search-button-hp-package")
+	private WebElement searchbuttonpackage;
+	
+	@FindBy(id="package-checkin-hp-package")
+	private WebElement packagecheckin;
+	
+	@FindBy(id="partialHotelBooking-hp-package")
+	private WebElement partialhotel;
+	
+	@FindBy(id="package-checkout-hp-package")
+	private WebElement packagecheckout;	
+	
+	@FindBy(id="cruise-start-date-hp-cruise")
+	private WebElement cruisestartdate;	
+	
+	@FindBy(id="cruise-end-date-hp-cruise")
+	private WebElement cruiseenddate;	
+	
+	@FindBy(xpath="//*[@id=\"flight-origin-hp-flight\"]")
+	private WebElement flightorigen;
+	
+	@FindBy(xpath="//*[@id=\"flight-destination-hp-flight\"]")
+	private WebElement flightdestino;
+	
+	@FindBy(xpath="//*[@id=\"gcw-hotel-form-hlp\"]/div[8]/label/button")
+	private WebElement searchbuttonhotel;
+	
+	@FindBy(xpath="//*[@id=\"gcw-flights-form-hp-flight\"]/div[9]/label/button")
+	private WebElement searchbuttonflight;
+	
+	@FindBy(xpath="//*[@id=\"gcw-packages-form-hp-package\"]/div[2]/div/ul/li/a")
+	private WebElement verificarerror;
+	
+	@FindBy(xpath="//select[@class='cruise-destination gcw-storeable']")
+	private WebElement cruisedestino;
+	
+	@FindBy(xpath="//*[@id=\"gcw-cruises-form-hp-cruise\"]/button")
+	private WebElement cruisebutton;
+	
+	public Booking(WebDriver driver) {
+		super(driver);		
+	}
 		
 	public void PresionarFlightButton() {
 		flightbutton.click();		
@@ -40,245 +126,188 @@ public class Booking extends BasePage {
 	}
 	
 	public void PresionarRoundTrip() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement roundtrip = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-type-roundtrip-label-hp-flight")));	
 		roundtrip.click();
 	}
 	
 	public void PresionarFlightHotel() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement flighthotel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("fh-fh-hp-package")));	
 		Actions action = new Actions(driver);
 		action.moveToElement(flighthotel).click().build().perform();		
 	}
 	
 	public void PresionarCruiseTab() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement flighthotel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tab-cruise-tab-hp")));	
 		Actions action = new Actions(driver);
-		action.moveToElement(flighthotel).click().build().perform();		
+		action.moveToElement(cruisetab).click().build().perform();		
 	}
 	
 	public void PresionarHotelDesdeHeader() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement hotel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("primary-header-hotel")));	
 		Actions action = new Actions(driver);
-		action.moveToElement(hotel).click().build().perform();		
+		action.moveToElement(headerhotel).click().build().perform();		
 	}
 	
 	public void PresionarHotelOnlyTab() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement hotel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tab-hotel-tab-hlp")));	
 		Actions action = new Actions(driver);
-		action.moveToElement(hotel).click().build().perform();		
+		action.moveToElement(hotelonlytab).click().build().perform();		
 	}
 	
-	public void IngresarOrigenPackage(String origen) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement txtSalida = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("package-origin-hp-package")));	
-		txtSalida.clear();
-		txtSalida.sendKeys(origen);
+	public void IngresarOrigenPackage(String origen) {		
+		packageorigin.clear();
+		packageorigin.sendKeys(origen);
 	}
 	
 	public void IngresarOrigenHotel(String origen) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement txtSalida = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hotel-destination-hlp")));	
-		txtSalida.clear();
-		txtSalida.sendKeys(origen);
+		hoteldestination.clear();
+		hoteldestination.sendKeys(origen);
 	}
 	
 	public void IngresarOrigen(String origen){		
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement txtOutbound = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-origin-hp-flight\"]")));	
-		txtOutbound.clear();
-		txtOutbound.sendKeys(origen);
+		flightorigen.clear();
+		flightorigen.sendKeys(origen);
 	}
 	
 	public void ingresarDestino(String destino){
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement txtInbound = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"flight-destination-hp-flight\"]")));	
-		txtInbound.clear();
-		txtInbound.sendKeys(destino);
+		flightdestino.clear();
+		flightdestino.sendKeys(destino);
 	}	
 	
 	public void ingresarDestinoPackage(String destino){
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement txtRetorno = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("package-destination-hp-package")));	
-		txtRetorno.clear();
-		txtRetorno.sendKeys(destino);
+		packagedestino.clear();
+		packagedestino.sendKeys(destino);
 	}	
-		
-	public void seleccionarFechaDeparture(String departuredate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-departing-hp-flight")));
-		departing.clear();
-		departing.sendKeys(departuredate);
+	
+	public void seleccionarFechaIdaDatePicker() {
+		today = getDepartureDate();
+		WebElement cal = flightdeparturedate;
+		cal.sendKeys(today);
+	}
+	
+	public void seleccionarFechaVueltaDatePicker() {
+		today = getReturnDate();
+		flightarrivaldate.click();
+		flightarrivaldate.clear();
+		for(int i=0; i<10; i++)
+		{
+			flightarrivaldate.sendKeys(Keys.BACK_SPACE);
+			i=i++;
+		}
+		WebElement cal = flightarrivaldate;
+		cal.sendKeys(today);
+	}
+	
+	public String getDepartureDate() {
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+		cal.setTime(new Date());
+		cal.add(Calendar.DATE, 60);
+		String newDate = dateFormat.format(cal.getTime());
+		return newDate;		
+	}
+	
+	public String getReturnDate() {
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+		cal.setTime(new Date());
+		cal.add(Calendar.DATE, 67);
+		String newDate = dateFormat.format(cal.getTime());
+		return newDate;		
 	}
 	
 	public void seleccionarFechaDeparturePackage(String departuredate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("package-departing-hp-package")));
-		departing.clear();
-		departing.sendKeys(departuredate);
+		packagedeparting.clear();
+		packagedeparting.sendKeys(departuredate);
 	}
 	
 	public void seleccionarFechaCheckInHotel(String checkindate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hotel-checkin-hlp")));
-		departing.clear();
-		departing.sendKeys(checkindate);
+		hotelcheckin.clear();
+		hotelcheckin.sendKeys(checkindate);
 	}
 	
 	public void seleccionarFechaCheckOutHotel(String checkoutdate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement arrival = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hotel-checkout-hlp")));
-		arrival.click();
-		arrival.clear();
+		hotelcheckout.click();
+		hotelcheckout.clear();
 		for(int i=0; i<10; i++)
 		{
-			arrival.sendKeys(Keys.BACK_SPACE);
+			hotelcheckout.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		arrival.sendKeys(checkoutdate);
+		hotelcheckout.sendKeys(checkoutdate);
 	}
 	
 	public void presionarSearchButtonHotel() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement searchButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-hotel-form-hlp\"]/div[8]/label/button")));
-		searchButton.click();		
+		searchbuttonhotel.click();		
 	}
-		
-	public void seleccionarFechaArrival(String arrivaldate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement arrival = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flight-returning-hp-flight")));
-		arrival.click();
-		arrival.clear();
-		for(int i=0; i<10; i++)
-		{
-			arrival.sendKeys(Keys.BACK_SPACE);
-			i=i++;
-		}
-		arrival.sendKeys(arrivaldate);
-	}	
 	
 	public void seleccionarFechaArrivalPackage(String arrivaldate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement arrival = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("package-returning-hp-package")));
-		arrival.click();
-		arrival.clear();
+		packagereturning.click();
+		packagereturning.clear();
 		for(int i=0; i<10; i++)
 		{
-			arrival.sendKeys(Keys.BACK_SPACE);
+			packagereturning.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		arrival.sendKeys(arrivaldate);
+		packagereturning.sendKeys(arrivaldate);
 	}	
 	
 	public void presionarSearchButton() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement searchButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-flights-form-hp-flight\"]/div[9]/label/button")));
-		searchButton.click();		
+		searchbuttonflight.click();		
 	}
 	
 	public void presionarSearchButtonPackage() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement searchButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search-button-hp-package")));
-		searchButton.click();
-		System.out.println("Search completa");
+		searchbuttonpackage.click();
 	}
 	
 	public void presionarCheckOnlyNeedHotelForPartOfMyStay() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement checkbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("partialHotelBooking-hp-package")));
-		checkbox.click();	
+		partialhotel.click();	
 	}
 	
 	public void seleccionarFechaHotelIdaAfterCheckbox(String checkindate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("package-checkin-hp-package")));
-		departing.clear();
-		departing.sendKeys(checkindate);		
+		packagecheckin.clear();
+		packagecheckin.sendKeys(checkindate);		
 	}
 	
 	public void seleccionarFechaArrivalPackageAfterCheckbox(String arrivaldate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement arrival = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("package-checkout-hp-package")));
-		arrival.click();
-		arrival.clear();
+		packagecheckout.click();
+		packagecheckout.clear();
 		for(int i=0; i<10; i++)
 		{
-			arrival.sendKeys(Keys.BACK_SPACE);
+			packagecheckout.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		arrival.sendKeys(arrivaldate);
+		packagecheckout.sendKeys(arrivaldate);
 	}
 	
 	public void VerificarErrorMessage() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement error = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-packages-form-hp-package\"]/div[2]/div/ul/li/a")));	
-		Assert.assertEquals(error.isDisplayed(), true);
-		System.out.println("Error Message: " + error.getText().toString());
+		Assert.assertEquals(verificarerror.getText().toString(), "Your partial check-in and check-out dates must fall within your arrival and departure dates. Please review your dates.");
 	}	
 	
 	public void seleccionarGoingToDropdown() {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement selectCountry = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@class='cruise-destination gcw-storeable']")));		
-		
-//		Select selectElement = new Select(selectCountry);
-//		System.out.println(selectElement.getOptions().get(5).getText());
-						
-		selectCountry.sendKeys(Keys.RETURN);
-		selectCountry.sendKeys(Keys.DOWN);
-		selectCountry.sendKeys(Keys.DOWN);		
-		selectCountry.sendKeys(Keys.DOWN);
-		selectCountry.sendKeys(Keys.DOWN);
-		selectCountry.sendKeys(Keys.DOWN);
-		selectCountry.sendKeys(Keys.DOWN);
-		selectCountry.sendKeys(Keys.RETURN);
-				
-		System.out.println(selectCountry.getText());	
-		
-//		List<WebElement> options = selectElement.getOptions();
-//		for(int i=0; i<options.size(); i++) {
-//			WebElement option=options.get(i);
-//			String countryName = option.getText();
-//			boolean selectedValue = option.isSelected();
-//			System.out.println(countryName);
-//			System.out.println(selectedValue);
-//			if(option.getText() == "Europe")
-//			{option.click();}
-//		}
-		
-		//Select dropdown = new Select(driver.findElement(By.id("cruise-destination-hp-cruise")));
-		//dropdown.getOptions().get(5).click();
-		//System.out.println(dropdown.getOptions().get(5).getText());		
-		
+		cruisedestino.sendKeys(Keys.RETURN);
+		cruisedestino.sendKeys(Keys.DOWN);
+		cruisedestino.sendKeys(Keys.DOWN);		
+		cruisedestino.sendKeys(Keys.DOWN);
+		cruisedestino.sendKeys(Keys.DOWN);
+		cruisedestino.sendKeys(Keys.DOWN);
+		cruisedestino.sendKeys(Keys.DOWN);
+		cruisedestino.sendKeys(Keys.RETURN);
 	}
 	
 	public void seleccionarFechaDepartsCruise(String checkindate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement departing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cruise-start-date-hp-cruise")));
-		departing.clear();
-		departing.sendKeys(checkindate);
+		cruisestartdate.clear();
+		cruisestartdate.sendKeys(checkindate);
 	}
 	
 	public void seleccionarFechaDepartsLateCruise(String arrivaldate) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement arrival = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cruise-end-date-hp-cruise")));
-		arrival.click();
-		arrival.clear();
+		cruiseenddate.click();
+		cruiseenddate.clear();
 		for(int i=0; i<10; i++)
 		{
-			arrival.sendKeys(Keys.BACK_SPACE);
+			cruiseenddate.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		arrival.sendKeys(arrivaldate);
+		cruiseenddate.sendKeys(arrivaldate);
 	}
 	
 	public void presionarSearchButtonCruise() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-cruises-form-hp-cruise\"]/button")));
-		boton.click();	
+		cruisebutton.click();	
 	}
 	
 }

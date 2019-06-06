@@ -1,39 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [My Acamica Suite]">
-  <test name="My Acamica Tests(failed)">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.automation.training.tests.EjercicioCinco">
+      <class name="com.automation.training.tests.EjercicioAcamica">
         <methods>
-          <include name="EjercicioAcamicaCinco"/>
-          <include name="beforeTest"/>
           <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.automation.training.tests.EjercicioCinco -->
-      <class name="com.automation.training.tests.EjercicioDos">
-        <methods>
-          <include name="EjercicioAcamicaDos"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.automation.training.tests.EjercicioDos -->
-      <class name="com.automation.training.tests.EjercicioUno">
-        <methods>
           <include name="EjercicioAcamicaUno"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.automation.training.tests.EjercicioUno -->
-      <class name="com.automation.training.tests.EjercicioTres">
-        <methods>
-          <include name="beforeTest"/>
-          <include name="EjercicioAcamicaTres"/>
-        </methods>
-      </class> <!-- com.automation.training.tests.EjercicioTres -->
-      <class name="com.automation.training.tests.EjercicioCuatro">
-        <methods>
-          <include name="EjercicioAcamicaCuatro"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.automation.training.tests.EjercicioCuatro -->
+      </class> <!-- com.automation.training.tests.EjercicioAcamica -->
     </classes>
-  </test> <!-- My Acamica Tests(failed) -->
-</suite> <!-- Failed suite [My Acamica Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

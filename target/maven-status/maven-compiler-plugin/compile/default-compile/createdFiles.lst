@@ -1,1 +1,10 @@
+com\automation\training\pages\Booking.class
+com\automation\training\pages\TripPage.class
+com\automation\training\pages\CruiseSearchPage.class
+com\automation\training\pages\BasePage.class
+com\automation\training\pages\WhoIsTravelingPage.class
+com\automation\training\pages\HotelSearchPage.class
 com\automation\training\App.class
+com\automation\training\tests\EjercicioAcamica.class
+com\automation\training\pages\SelectPage.class
+com\automation\training\pages\RoomsPage.class
