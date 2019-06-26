@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 06 17:14:42 ART 2019</td>
+<td>Started on:</td><td>Tue Jun 18 15:35:15 ART 2019</td>
 </tr>
-<tr><td>Total time:</td><td>30 seconds (30337 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (53 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,26 +76,14 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.automation.training.tests.EjercicioAcamica.EjercicioAcamicaUno()'><b>EjercicioAcamicaUno</b><br>Test class: com.automation.training.tests.EjercicioAcamica</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;btn-secondary btn-action t-select-btn&quot; data-test-id=&quot;select-button&quot; data-bargain-fare=&quot;false&quot; data-click-handler=&quot;select-flight,omnitureClickHandler&quot; data-prevent-expand=&quot;true&quot; data-omniture-rfrr=&quot;Select.Offer0.BestValue&quot; data-trip-id=&quot;2019-08-05t17:35:00-07:00-coach-las-lax-ua-1861;2019-08-12t20:25:00-07:00-coach-lax-las-as-560;&quot; data-offer-index=&quot;&quot; data-has-fare=&quot;true&quot; data-leg-indexes=&quot;5,2&quot; data-superlatives=&quot;BV,CP&quot; data-outbound-airlinecodes=&quot;UA&quot; data-inbound-airlinecodes=&quot;&quot; data-is-cached=&quot;false&quot; data-result-token=&quot;v5-8c0bd724d36b4b948e0138b5b707c37d&quot; data-air-provider-id=&quot;2&quot; data-flight-fare-type-code=&quot;P&quot; data-flight-fare-type-value=&quot;1&quot; data-currency-code=&quot;USD&quot; data-exact-price=&quot;107.33&quot; data-is-split-ticket=&quot;true&quot; data-discount=&quot;0&quot; data-is-packageable=&quot;true&quot; data-debug-var1=&quot;false&quot; data-debug-var2=&quot;false&quot; data-debug-var3=&quot;false&quot; data-leg0-natural-key=&quot;e0e3d5252186d21cd13e4a4da078dffd&quot; data-is-basic-economy-tray-button=&quot;true&quot;&gt;...&lt;/button&gt; is not clickable at point (1125, 726). Other element would receive the click: &lt;div class=&quot;basic-economy-tray-details standard-padding&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=74.0.3729.169)
-  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 65 milliseconds
-Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
-System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62206}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir4260_151}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 20759457b303bd467b289ec2f994ec2c
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at com.automation.training.pages.SelectPage.SeleccionarVueloVuelta(SelectPage.java:70)
-	at com.automation.training.tests.EjercicioAcamica.EjercicioAcamicaUno(EjercicioAcamica.java:58)
+<td><div><pre>java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:212)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:102)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at com.automation.training.pages.BasePage.&lt;init&gt;(BasePage.java:13)
+	at com.automation.training.pages.Booking.&lt;init&gt;(Booking.java:108)
+	at com.automation.training.tests.EjercicioAcamica.EjercicioAcamicaUno(EjercicioAcamica.java:67)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -120,27 +108,15 @@ Session ID: 20759457b303bd467b289ec2f994ec2c
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1345483087", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1345483087'><pre>org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;btn-secondary btn-action t-select-btn&quot; data-test-id=&quot;select-button&quot; data-bargain-fare=&quot;false&quot; data-click-handler=&quot;select-flight,omnitureClickHandler&quot; data-prevent-expand=&quot;true&quot; data-omniture-rfrr=&quot;Select.Offer0.BestValue&quot; data-trip-id=&quot;2019-08-05t17:35:00-07:00-coach-las-lax-ua-1861;2019-08-12t20:25:00-07:00-coach-lax-las-as-560;&quot; data-offer-index=&quot;&quot; data-has-fare=&quot;true&quot; data-leg-indexes=&quot;5,2&quot; data-superlatives=&quot;BV,CP&quot; data-outbound-airlinecodes=&quot;UA&quot; data-inbound-airlinecodes=&quot;&quot; data-is-cached=&quot;false&quot; data-result-token=&quot;v5-8c0bd724d36b4b948e0138b5b707c37d&quot; data-air-provider-id=&quot;2&quot; data-flight-fare-type-code=&quot;P&quot; data-flight-fare-type-value=&quot;1&quot; data-currency-code=&quot;USD&quot; data-exact-price=&quot;107.33&quot; data-is-split-ticket=&quot;true&quot; data-discount=&quot;0&quot; data-is-packageable=&quot;true&quot; data-debug-var1=&quot;false&quot; data-debug-var2=&quot;false&quot; data-debug-var3=&quot;false&quot; data-leg0-natural-key=&quot;e0e3d5252186d21cd13e4a4da078dffd&quot; data-is-basic-economy-tray-button=&quot;true&quot;&gt;...&lt;/button&gt; is not clickable at point (1125, 726). Other element would receive the click: &lt;div class=&quot;basic-economy-tray-details standard-padding&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=74.0.3729.169)
-  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 65 milliseconds
-Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
-System info: host: &apos;AR-IT12014B&apos;, ip: &apos;172.26.97.159&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:62206}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}), userDataDir=C:\Users\NICOLA~1.MON\AppData\Local\Temp\scoped_dir4260_151}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=74.0.3729.169, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 20759457b303bd467b289ec2f994ec2c
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at com.automation.training.pages.SelectPage.SeleccionarVueloVuelta(SelectPage.java:70)
-	at com.automation.training.tests.EjercicioAcamica.EjercicioAcamicaUno(EjercicioAcamica.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace846238611", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace846238611'><pre>java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:212)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:102)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
+	at com.automation.training.pages.BasePage.&lt;init&gt;(BasePage.java:13)
+	at com.automation.training.pages.Booking.&lt;init&gt;(Booking.java:108)
+	at com.automation.training.tests.EjercicioAcamica.EjercicioAcamicaUno(EjercicioAcamica.java:67)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -166,8 +142,8 @@ Session ID: 20759457b303bd467b289ec2f994ec2c
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>12</td>
-<td>com.automation.training.tests.EjercicioAcamica@5c7fa833</td></tr>
+<td>0</td>
+<td>com.automation.training.tests.EjercicioAcamica@4501b7af</td></tr>
 </table><p>
 </body>
 </html>

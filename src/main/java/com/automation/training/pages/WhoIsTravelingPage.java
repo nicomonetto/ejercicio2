@@ -1,5 +1,7 @@
 package com.automation.training.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,29 +16,28 @@ public class WhoIsTravelingPage extends BasePage {
 	}
 	
 	public void VerificarTitulo() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement titulo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"preferences\"]/form/fieldset/h2")));	
-		Assert.assertEquals(titulo.isDisplayed(), true);
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+					
+		WebElement titulo = driver.findElement(By.className("faceoff-module-title"));	
+		Assert.assertEquals(titulo.getText().toString(), "Who's traveling?");
 		System.out.println("Who is Traveling Titulo OK");
 	}
 	
 	public void VerificarProtectYourFlight() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement flight = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"insurance\"]/section/header/h2")));	
+		WebElement flight = driver.findElement(By.className("title-main"));	
 		Assert.assertEquals(flight.isDisplayed(), true);
 		System.out.println("Protect your flight OK");
 	}
 	
 	public void VerificarTotal() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement total = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("totalPriceForTrip")));	
+		WebElement total = driver.findElement(By.id("totalPriceForTrip"));	
 		Assert.assertEquals(total.isDisplayed(), true);
 		System.out.println("Total Flight OK");
 	}
 	
 	public void VerificarPriceGuarantee() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement price = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"best-price-guarantee\"]/div/h3")));	
+		
+		WebElement price = driver.findElement(By.className("halert alert-success  h3-heading"));	
 		Assert.assertEquals(price.isDisplayed(), true);
 		System.out.println("Precio Garantizado OK");
 	}

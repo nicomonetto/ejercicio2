@@ -14,6 +14,7 @@ public class HotelSearchPage extends BasePage{
 	}
 	
 	public void VerificarMultiStepIndicator() {
+					
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
 		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("multiStepIndicatorContainer")));	
 		Assert.assertEquals(step.isDisplayed(), true);

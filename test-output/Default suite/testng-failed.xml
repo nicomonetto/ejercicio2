@@ -5,7 +5,6 @@
     <classes>
       <class name="com.automation.training.tests.EjercicioAcamica">
         <methods>
-          <include name="afterTest"/>
           <include name="EjercicioAcamicaUno"/>
           <include name="beforeTest"/>
         </methods>
