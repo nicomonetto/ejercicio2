@@ -1,10 +1,13 @@
 package com.automation.training.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.text.DateFormat;
@@ -97,13 +100,7 @@ public class Booking extends BasePage {
 	
 	@FindBy(xpath="//*[@id=\"gcw-packages-form-hp-package\"]/div[2]/div/ul/li/a")
 	private WebElement verificarerror;
-	
-	@FindBy(xpath="//select[@class='cruise-destination gcw-storeable']")
-	private WebElement cruisedestino;
-	
-	@FindBy(xpath="//*[@id=\"gcw-cruises-form-hp-cruise\"]/button")
-	private WebElement cruisebutton;
-	
+
 	public Booking(WebDriver driver) {
 		super(driver);		
 	}
@@ -202,17 +199,20 @@ public class Booking extends BasePage {
 		return newDate;		
 	}
 	
-	public void seleccionarFechaDeparturePackage(String departuredate) {
-		packagedeparting.clear();
-		packagedeparting.sendKeys(departuredate);
+	public void seleccionarFechaDeparturePackage() {
+		today = getDepartureDate();
+		WebElement cal = packagedeparting;
+		cal.sendKeys(today);
 	}
 	
-	public void seleccionarFechaCheckInHotel(String checkindate) {
-		hotelcheckin.clear();
-		hotelcheckin.sendKeys(checkindate);
+	public void seleccionarFechaCheckInHotel() {
+		today = getDepartureDate();
+		WebElement cal = hotelcheckin;
+		cal.sendKeys(today);
 	}
 	
-	public void seleccionarFechaCheckOutHotel(String checkoutdate) {
+	public void seleccionarFechaCheckOutHotel() {
+		today = getReturnDate();
 		hotelcheckout.click();
 		hotelcheckout.clear();
 		for(int i=0; i<10; i++)
@@ -220,14 +220,16 @@ public class Booking extends BasePage {
 			hotelcheckout.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		hotelcheckout.sendKeys(checkoutdate);
+		WebElement cal = hotelcheckout;
+		cal.sendKeys(today);
 	}
 	
 	public void presionarSearchButtonHotel() {
 		searchbuttonhotel.click();		
 	}
 	
-	public void seleccionarFechaArrivalPackage(String arrivaldate) {
+	public void seleccionarFechaArrivalPackage() {
+		today = getReturnDate();
 		packagereturning.click();
 		packagereturning.clear();
 		for(int i=0; i<10; i++)
@@ -235,11 +237,13 @@ public class Booking extends BasePage {
 			packagereturning.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		packagereturning.sendKeys(arrivaldate);
+		WebElement cal = packagereturning;
+		cal.sendKeys(today);
 	}	
 	
 	public void presionarSearchButton() {
-		searchbuttonflight.click();		
+		searchbuttonflight.click();
+		System.out.println("Flight Search realizado");
 	}
 	
 	public void presionarSearchButtonPackage() {
@@ -267,26 +271,23 @@ public class Booking extends BasePage {
 	}
 	
 	public void VerificarErrorMessage() {
-		Assert.assertEquals(verificarerror.getText().toString(), "Your partial check-in and check-out dates must fall within your arrival and departure dates. Please review your dates.");
+		Assert.assertEquals(verificarerror.getText().toString(), "Dates must be between 7/16/2019 and 6/9/2020.");
 	}	
 	
 	public void seleccionarGoingToDropdown() {
-		cruisedestino.sendKeys(Keys.RETURN);
-		cruisedestino.sendKeys(Keys.DOWN);
-		cruisedestino.sendKeys(Keys.DOWN);		
-		cruisedestino.sendKeys(Keys.DOWN);
-		cruisedestino.sendKeys(Keys.DOWN);
-		cruisedestino.sendKeys(Keys.DOWN);
-		cruisedestino.sendKeys(Keys.DOWN);
-		cruisedestino.sendKeys(Keys.RETURN);
+
+		WebElement dropdown = getWait().until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#cruise-destination-hp-cruise>optgroup:nth-child(2)>option:nth-child(5)")));
+		dropdown.click();
 	}
 	
-	public void seleccionarFechaDepartsCruise(String checkindate) {
-		cruisestartdate.clear();
-		cruisestartdate.sendKeys(checkindate);
+	public void seleccionarFechaDepartsCruise() {
+		today = getDepartureDate();
+		WebElement cal = cruisestartdate;
+		cal.sendKeys(today);
 	}
 	
-	public void seleccionarFechaDepartsLateCruise(String arrivaldate) {
+	public void seleccionarFechaDepartsLateCruise() {
+		today = getReturnDate();
 		cruiseenddate.click();
 		cruiseenddate.clear();
 		for(int i=0; i<10; i++)
@@ -294,11 +295,13 @@ public class Booking extends BasePage {
 			cruiseenddate.sendKeys(Keys.BACK_SPACE);
 			i=i++;
 		}
-		cruiseenddate.sendKeys(arrivaldate);
+		WebElement cal = cruiseenddate;
+		cal.sendKeys(today);
 	}
 	
 	public void presionarSearchButtonCruise() {
-		cruisebutton.click();	
+		WebElement search = getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"gcw-cruises-form-hp-cruise\"]/button")));
+		search.click();
 	}
 	
 }

@@ -19,10 +19,8 @@ public class RoomsPage extends BasePage {
 	public void VerificarTituloHotel() {
 		
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		
-		String windowHandle = driver.getWindowHandle();
+
 	    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
-	    
 	    ArrayList tabs = new ArrayList (driver.getWindowHandles());
 	    System.out.println("Total Tabs: " + tabs.size());
 	    driver.switchTo().window(tabs.get(1).toString());

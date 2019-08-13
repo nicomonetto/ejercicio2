@@ -37,26 +37,14 @@ public class TripPage extends BasePage {
 	}	
 	
 	public void VerificarDepartureData() {
-		WebElement salida = driver.findElement(By.className("flex-area-primary"));
-		WebElement titulo = salida.findElement(By.tagName("h3"));
-		assertEquals(titulo.getText().toString(), "Departure");
-		
-//		WebDriverWait wait = new WebDriverWait(driver, 10);	
-//		WebElement salida = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("departureDate type-500")));	
-//		Assert.assertEquals(salida.isDisplayed(), true);
-		
+		WebElement departure = driver.findElement(By.cssSelector("section.flightSummaryContainer > div > div:nth-child(2)"));
+		assertEquals(departure.isDisplayed(), true);
 		System.out.println("Datos Departure OK");
 	}
 	
 	public void VerificarReturnData() {
-		WebElement salida = driver.findElement(By.className("flex-area-primary"));
-		WebElement titulo = salida.findElement(By.tagName("h3"));
-		assertEquals(titulo.getText().toString(), "Return");
-		
-//		WebDriverWait wait = new WebDriverWait(driver, 10);	
-//		WebElement vuelta = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/main/section[1]/div/div[2]/div/div/div[1]/div[1]")));	
-//		Assert.assertEquals(vuelta.isDisplayed(), true);
-		
+		WebElement llegada = driver.findElement(By.cssSelector("section.flightSummaryContainer > div > div:nth-child(3)"));
+		assertEquals(llegada.isDisplayed(), true);
 		System.out.println("Datos Return OK");
 	}
 	

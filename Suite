@@ -1,11 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="My Acamica Suite" verbose="1" thread-count="5" parallel="methods">
+<suite name="My Acamica Suite" parallel="methods" thread-count="5">
 <parameter name="browser" value="Chrome" />
 <test name="My Acamica Tests"> 
 <classes>
 <class name="com.automation.training.tests.EjercicioAcamica">
-<methods><include name="EjercicioAcamicaDos" /></methods>
+    <methods>
+        <include name="EjercicioAcamicaUno" />
+    </methods>
 </class>
 </classes>
 </test>

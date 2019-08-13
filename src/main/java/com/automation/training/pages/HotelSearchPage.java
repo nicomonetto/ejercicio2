@@ -3,6 +3,7 @@ package com.automation.training.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -15,22 +16,22 @@ public class HotelSearchPage extends BasePage{
 	
 	public void VerificarMultiStepIndicator() {
 					
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("multiStepIndicatorContainer")));	
+		WebDriverWait wait = new WebDriverWait(driver, 25);
+		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#multiStepIndicatorContainer")));
 		Assert.assertEquals(step.isDisplayed(), true);
 		System.out.println("Indicador de Steps OK");
 	}
 	
 	public void VerificarDiscountBanner10Off() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mer-signup-toggle-btn")));	
+		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#memberPricingAccordionBanner>div>div>div>div:nth-child(2)")));
 		Assert.assertEquals(step.isDisplayed(), true);
 		System.out.println("Get an extra 10% banner OK");
-	}	
-	
+	}
+
 	public void VerificarSponsoredFirst() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"525675_sponsored\"]/div[2]/div/div[1]/div[3]/div/div[1]/span/ul/li[6]")));	
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebElement step = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div#resultsContainer>section>article>div:nth-child(3)>div>a")));
 		Assert.assertEquals(step.isDisplayed(), true);
 		System.out.println("Sponsored First OK");
 	}	

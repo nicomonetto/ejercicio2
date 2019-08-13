@@ -14,7 +14,7 @@ public abstract class BasePage {
 		driver = pDriver;
 		PageFactory.initElements(pDriver, this);
 	}
-	
+
 	public WebDriverWait getWait() {
 		return wait;
 	}

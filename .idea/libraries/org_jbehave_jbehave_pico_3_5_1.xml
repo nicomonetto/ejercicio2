@@ -1,0 +1,40 @@
+<component name="libraryTable">
+  <library name="org.jbehave:jbehave-pico:3.5.1" type="repository">
+    <properties maven-id="org.jbehave:jbehave-pico:3.5.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbehave/jbehave-pico/3.5.1/jbehave-pico-3.5.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbehave/jbehave-core/3.5.1/jbehave-core-3.5.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit-dep/4.8.2/junit-dep-4.8.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-library/1.1/hamcrest-library-1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-integration/1.1/hamcrest-integration-1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/1.4/commons-io-1.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.16/freemarker-2.3.16.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/picocontainer/picocontainer/2.13.4/picocontainer-2.13.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbehave/jbehave-pico/3.5.1/jbehave-pico-3.5.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jbehave/jbehave-core/3.5.1/jbehave-core-3.5.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit-dep/4.8.2/junit-dep-4.8.2-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-library/1.1/hamcrest-library-1.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-integration/1.1/hamcrest-integration-1.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/1.4/commons-io-1.4-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.16/freemarker-2.3.16-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/picocontainer/picocontainer/2.13.4/picocontainer-2.13.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -15,16 +15,17 @@ public class CruiseSearchPage extends BasePage{
 	}
 	
 	public void SeleccionarCruiseLength() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);	
-		WebElement radiobutton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"ember1327\"]/div/label")));	
-		Actions action = new Actions(driver);
-		action.moveToElement(radiobutton).click().build().perform();
-		System.out.println("Length 10-14 Nights OK");
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		WebElement radiobutton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.filters-wrapper>fieldset:nth-child(4)>div>div>div:nth-child(4)>div>label>input")));
+		if(radiobutton.isEnabled()) {
+			radiobutton.click();
+			System.out.println("Length 10-14 Nights OK");
+		}
 	}
 	
 	public void OrdenarPorPrice() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement ordenamiento = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"container-bar\"]/div/div[2]/div/fieldset/ul/li[3]/button")));
+		WebElement ordenamiento = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.sort-bar-column>fieldset>ul>li:nth-child(3) button")));
 		Actions action = new Actions(driver);
 		action.moveToElement(ordenamiento).click().build().perform();
 		System.out.println("Ordenamiento por price OK");
@@ -40,15 +41,9 @@ public class CruiseSearchPage extends BasePage{
 	public void SeleccionarCrucero() {
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("selectSailingButton-AQoCbmMSAjIxGIDwz47BLSAMKgNzdGgyAmdiOgNzdGhCAmdi-21")));		
-		boton.click();
-		
+		WebElement boton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"selectSailingButton-AQoCcGMSAmtwGIDAlqzNLSAMKgNsZWgyAmZyOgNsZWhCAmZy-KP\"]")));
+		Actions action = new Actions(driver);
+		action.moveToElement(boton).click().build().perform();
 		System.out.println("Crucero con mayor descuento Elegido");
-		
-		//To extract a number from a string
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
-//		WebElement discount = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='message-flag flex-flag']")));		
-//		int a = Integer.parseInt(discount.getText().replaceAll("[^0-9.]", ""));
-//		System.out.println(a);		
 	}
 }
