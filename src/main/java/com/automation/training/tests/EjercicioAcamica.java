@@ -20,9 +20,9 @@ public class EjercicioAcamica {
 		switch (browser){
 		case "Chrome":
 			try {
-				//La version de java entre linux y windows no es la misma !!!!!
-				//WebDriverManager.chromedriver().setup();
-				System.getProperty("line.separator");
+
+				WebDriverManager.chromedriver().setup();
+				//System.getProperty("line.separator");
 				myDriver = new ChromeDriver();
 				myDriver.manage().window().maximize();
 				myDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
